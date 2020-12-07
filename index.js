@@ -58,4 +58,4 @@ if (message.content.indexOf(config.prefix) === 0) { // Message starts with your 
 
 
 
-client.login("process.env.BOT_TOKEN");
+client.login(process.env.BOT_TOKEN);
