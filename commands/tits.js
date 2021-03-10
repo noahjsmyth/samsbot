@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 const neko = new client();
 
 module.exports = {
-  name: "tits",
+  name: "boobs",
   category: "NSFW",
   description: "Sends random hentai",
   usage: "[command]",
@@ -12,13 +12,13 @@ module.exports = {
   var errMessage = "This is not an NSFW Channel";
    if (message.channel.nsfw) {
         async function work() {
-        let owo = (await neko.nsfw.tits());
+        let owo = (await irlnsfw.anal());
 
         const hentai = new Discord.RichEmbed()
         .setTitle("Tits")
-        .setImage(owo.url)
+        .setImage(owo)
         .setColor(`#FF0000`)
-        .setURL(owo.url);
+        .setURL(owo);
         message.channel.send(hentai);
 
 }
