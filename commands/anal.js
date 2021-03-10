@@ -12,7 +12,9 @@ module.exports = {
   var errMessage = "This is not an NSFW Channel";
    if (message.channel.nsfw) {
         async function work() {
-        let owo = (await neko.nsfw.anal());
+        let owo = (await nsfw.anal());
+          
+
 
         const hentai = new Discord.RichEmbed()
         .setTitle("Anal")
