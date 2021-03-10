@@ -5,7 +5,7 @@ module.exports = {
   usage: "[command]",
   execute: async (message, args) => {  
 const collectorTitle = new Discord.MessageCollector(message.channel, m => m.mentions.users.first().id === message.author.id, { time: 10000 });
-  collectorTitle.on('collect', message => {message.channel.send('yes')}
+  collectorTitle.on('collect', message => {message.channel.send('yes')})
                     }
                     }
                     
