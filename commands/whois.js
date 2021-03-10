@@ -12,7 +12,7 @@ module.exports = {
       .addField('Username:', `${message.author.tag}`, true)
       .addField('ID:', `${message.author.id}`, true)
       .addField('Account Creation Date:', `${message.author.createdAt}`, true)
-      .addField('Server Join Date:', `${message.member.joinedAt}`, true)
+      .addField('Server Join Date:', `${message.member.cache.joinedAt}`, true)
       .setImage(`${message.author.displayAvatarURL}`)
     const pinged = new Discord.RichEmbed()
       .setTitle(`${usertag}'s User Information`)
