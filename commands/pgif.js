@@ -17,10 +17,9 @@ module.exports = {
 
 
         const hentai = new Discord.RichEmbed()
-        .setTitle("Anal")
+        .setTitle("Here, have some GIF")
         .setImage(owo)
         .setColor(`#FF0000`)
-        .setURL(owo);
         message.channel.send(hentai);
 
 }
