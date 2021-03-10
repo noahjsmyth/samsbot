@@ -1,6 +1,8 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const config = require('./config.json');
+global.irlNSFW = require("discord-nsfw");
+global.irlnsfw = new irlNSFW();
 
 
 global.client = new Discord.Client()
