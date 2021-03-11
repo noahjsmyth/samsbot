@@ -16,7 +16,7 @@ function makeid(length) {
 }
     
 	  if (!args[0]) {
-		  message.author.send('The password I generated was `' + `${makeid(randlength)}` + '`');
+		  message.author.send('The password I generated was `' + `${makeid(20)}` + '`');
 		  
 	  }    
 
