@@ -20,7 +20,7 @@ module.exports = {
 	  
 	  
 const confembed = new Discord.RichEmbed()
-	.setDescription(fortunes[Math.floor(Math.random() * fortunes.length)])
+	.setDescription(confmessages[Math.floor(Math.random() * confmessages.length)])
 	.setColor('#000000')	  
 	  
 	  
