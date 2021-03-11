@@ -41,7 +41,7 @@ yescollector.on('collect', m => {
   message.channel.send('it fucking worked! PogChamp');
 	yescollector.stop();
 	nocollector.stop();
-}
+});
 
 
 	nocollector.on('collect', m => {
@@ -49,17 +49,11 @@ yescollector.on('collect', m => {
   message.channel.send('They said no, dumbass');
 	nocollector.stop();	
 	yescollector.stop();
-}
-	
-	
-	
-	
-	
-
 });
                     }
 	  }
+}
  
-                    }
+                  
                     
                    
