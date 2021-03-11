@@ -5,7 +5,7 @@ module.exports = {
   description: "Sends random hentai",
   usage: "[command]",
   execute: async (message, args) => {  
-
+	message.channel.send('Okay, whoever got pinged needs to say yes. Thanks!');
     const filter = m => m.content.includes('yes') && m.author.id === message.mentions.users.first().id;
 const collector = message.channel.createMessageCollector(filter, { time: 15000000 });
 
