@@ -1,5 +1,10 @@
 const Discord = require('discord.js');
-
+var confmessages = [
+  `someone wants to fuck`,
+  `you dtf?`,
+  `someone's horny for you :smirk:`,
+  `gonna fuck them?`
+];
 
 
 
@@ -15,7 +20,7 @@ module.exports = {
 	  
 	  
 const confembed = new Discord.RichEmbed()
-	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?}`)
+	.setDescription(fortunes[Math.floor(Math.random() * fortunes.length)])
 	.setColor('#000000')	  
 	  
 	  
