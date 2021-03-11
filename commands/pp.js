@@ -21,3 +21,5 @@ function makeid(length) {
 	  }    
 
 console.log(makeid(randlength));
+  }
+}
