@@ -35,6 +35,7 @@ const collector = message.channel.createMessageCollector(filter, { time: 1500000
 collector.on('collect', m => {
 	console.log(`Collected ${m.content}`);
   message.channel.send('it fucking worked! PogChamp');
+	collector.stop()
 	
 	
 	
