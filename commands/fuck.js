@@ -2,9 +2,7 @@ const Discord = require('discord.js');
 
 
 
-const confembed = new Discord.RichEmbed()
-	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?}`)
-	.setColor(black)
+
 
 
 
@@ -14,6 +12,17 @@ module.exports = {
   description: "Sends random hentai",
   usage: "[command]",
   execute: async (message, args) => {  
+	  
+	  
+const confembed = new Discord.RichEmbed()
+	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?}`)
+	.setColor(black)	  
+	  
+	  
+	  
+	  
+	  
+	  
 	  if (!message.mentions.users.first()) {
 		  message.channel.send('You need to ping someone if you want to fuck them, silly!');
 		  
