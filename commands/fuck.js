@@ -20,7 +20,7 @@ var fuckmessages = [
   `gonna fuck them?`
 ];
 
-let image = (await irlnsfw.pgif());
+
 
 
 
@@ -32,7 +32,8 @@ module.exports = {
   description: "Sends random hentai",
   usage: "[command]",
   execute: async (message, args) => {  
-	  
+
+let image = (await irlnsfw.pgif());	  
 	  
 const confembed = new Discord.RichEmbed()
 	.setDescription(confmessages[Math.floor(Math.random() * confmessages.length)])
