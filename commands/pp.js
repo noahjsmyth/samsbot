@@ -16,7 +16,7 @@ function makeid(length) {
 }
     
 	  if (!args[0]) {
-		  message.channel.send(`pp size is ${makeid(randlength)} :flushed:`);
+		  message.channel.send(`pp size is 8${makeid(randlength)}D :flushed:`);
 		  
 	  }    
 
