@@ -15,7 +15,15 @@ module.exports = {
   execute: async (message, args) => {  
 
 	  
-	  
+	  if (!args[0]) {
+		  message.channel.send(':x: | You need to ping someone if you want to fuck them, silly!');
+		  
+	  }
+	 
+	  if (!message.mentions.users) {
+		  message.channel.send(':x: | You need to ping someone if you want to fuck them, silly!');
+		  
+	  }	  
 	  
 	  
 	  
@@ -56,16 +64,8 @@ const fuckembed = new Discord.RichEmbed()
 	  
 	  
 	  
-	  if (!args[0]) {
-		  message.channel.send(':x: | You need to ping someone if you want to fuck them, silly!');
-		  
-	  }
-	 
-	  if (!message.mentions.users) {
-		  message.channel.send(':x: | You need to ping someone if you want to fuck them, silly!');
-		  
-	  }
-	  else {
+
+
 	message.channel.send(confembed);
 		  
 		  
