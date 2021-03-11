@@ -1,2 +1,2 @@
-# samsbot
-sams bot
+# bot
+this has some fucked up shit
