@@ -1,5 +1,5 @@
 module.exports = {
-  name: "pgif",
+  name: "fucktest",
   category: "NSFW",
   description: "Sends random hentai",
   usage: "[command]",
