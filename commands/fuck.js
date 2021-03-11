@@ -5,9 +5,16 @@ module.exports = {
   description: "Sends random hentai",
   usage: "[command]",
   execute: async (message, args) => {  
-const collectorTitle = new Discord.MessageCollector(message.channel, m => m.mentions.users.first().id === message.author.id, { time: 10000 });
-  collectorTitle.on('collect', message => {message.channel.send('yes')})
+
+    const filter = m => m.content.includes('yes') && m.author.id === message.mentions.first().id;
+const collector = message.channel.createMessageCollector(filter, { time: 15000 });
+
+collector.on('collect', m => {
+	console.log(`Collected ${m.content}`);
+  message.channel.send('it fucking worked! PogChamp');
+});
                     }
+ 
                     }
                     
                    
