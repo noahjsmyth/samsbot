@@ -29,14 +29,27 @@ const confembed = new Discord.RichEmbed()
 	  }
 	  else {
 	message.channel.send(confembed);
-    const filter = m => m.content.includes('yes') && m.author.id === message.mentions.users.first().id;
-const collector = message.channel.createMessageCollector(filter, { time: 15000000 });
+		  
+		  
+const yesfilter = m => m.content.includes('yes') && m.author.id === message.mentions.users.first().id;
+const yescollector = message.channel.createMessageCollector(yesfilter, { time: 15000000 });
+const nofilter = m => m.content.includes('no') && m.author.id === message.mentions.users.first().id;
+const nocollector = message.channel.createMessageCollector(yesfilter, { time: 15000000 });		  
 
-collector.on('collect', m => {
+yescollector.on('collect', m => {
 	console.log(`Collected ${m.content}`);
   message.channel.send('it fucking worked! PogChamp');
-	collector.stop()
-	
+	yescollector.stop();
+	nocollector.stop();
+}
+
+
+	nocollector.on('collect', m => {
+	console.log(`Collected ${m.content}`);
+  message.channel.send('They said no, dumbass');
+	nocollector.stop();	
+	yescollector.stop();
+}
 	
 	
 	
