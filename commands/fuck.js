@@ -34,7 +34,7 @@ const confembed = new Discord.RichEmbed()
 const yesfilter = m => m.content.includes('yes') && m.author.id === message.mentions.users.first().id;
 const yescollector = message.channel.createMessageCollector(yesfilter, { time: 15000000 });
 const nofilter = m => m.content.includes('no') && m.author.id === message.mentions.users.first().id;
-const nocollector = message.channel.createMessageCollector(yesfilter, { time: 15000000 });		  
+const nocollector = message.channel.createMessageCollector(nofilter, { time: 15000000 });		  
 
 yescollector.on('collect', m => {
 	console.log(`Collected ${m.content}`);
