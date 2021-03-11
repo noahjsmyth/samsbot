@@ -16,7 +16,7 @@ module.exports = {
 	  
 const confembed = new Discord.RichEmbed()
 	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?}`)
-	.setColor(black)	  
+	.setColor('#000000')	  
 	  
 	  
 	  
