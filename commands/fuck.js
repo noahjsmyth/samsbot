@@ -20,10 +20,10 @@ module.exports = {
 	  
 	  
 var confmessages = [
-  `Hey, <@${message.mentions.first().id}>, someone wants to fuck ya, what do you think? :smirk:`,
-  `Whats up <@${message.mentions.first().id}>, you dtf?`,
-  `<@${message.mentions.first().id}> *D-do I h-have p-permission to f-fuck you?*`,
-  `<@${message.mentions.first().id}> Fuck me, *please?*`
+  `Hey, <@${message.mentions.users.first().id}>, someone wants to fuck ya, what do you think? :smirk:`,
+  `Whats up <@${message.mentions.users.first().id}>, you dtf?`,
+  `<@${message.mentions.users.first().id}> *D-do I h-have p-permission to f-fuck you?*`,
+  `<@${message.mentions.users.first().id}> Fuck me, *please?*`
 ];
 
 var rejmessages = [
@@ -34,10 +34,10 @@ var rejmessages = [
 ];
 
 var fuckmessages = [
-  `<@${message.mentions.first().id}> pushes <@${message.author.id}> against a wall and fucks them hard.`,
-  `<@${message.mentions.first().id}> gets penetrated by <@${message.author.id}>.`,
-  `<@${message.author.id}> fucks <@${message.mentions.first().id}> to orgasm heaven.`,
-  `<@${message.mentions.first().id}>'s dick nearly tears <@${message.mentions.first().id}>'s tight ass.`
+  `<@${message.mentions.users.first().id}> pushes <@${message.author.id}> against a wall and fucks them hard.`,
+  `<@${message.mentions.users.first().id}> gets penetrated by <@${message.author.id}>.`,
+  `<@${message.author.id}> fucks <@${message.mentions.users.first().id}> to orgasm heaven.`,
+  `<@${message.mentions.first().id}>'s dick nearly tears <@${message.mentions.users.first().id}>'s tight ass.`
 ];
 	  
 	  
