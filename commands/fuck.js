@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 
 const confembed = new Discord.RichEmbed()
-	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?`})
+	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?}`)
 	.setColor(black)
 
 
