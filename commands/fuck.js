@@ -1,24 +1,5 @@
 const Discord = require('discord.js');
-var confmessages = [
-  `someone wants to fuck`,
-  `you dtf?`,
-  `someone's horny for you :smirk:`,
-  `gonna fuck them?`
-];
 
-var rejmessages = [
-  `someone wants to fuck`,
-  `you dtf?`,
-  `someone's horny for you :smirk:`,
-  `gonna fuck them?`
-];
-
-var fuckmessages = [
-  `someone wants to fuck`,
-  `you dtf?`,
-  `someone's horny for you :smirk:`,
-  `gonna fuck them?`
-];
 
 
 
@@ -33,6 +14,35 @@ module.exports = {
   usage: "[command]",
   execute: async (message, args) => {  
 
+	  
+	  
+	  
+	  
+	  
+var confmessages = [
+  `Hey, <@${message.mentions.first().id}>, someone wants to fuck ya, what do you think? :smirk:`,
+  `Whats up <@${message.mentions.first().id}>, you dtf?`,
+  `<@${message.mentions.first().id}> *D-do I h-have p-permission to f-fuck you?*`,
+  `<@${message.mentions.first().id}> Fuck me, *please?*`
+];
+
+var rejmessages = [
+  `someone wants to fuck`,
+  `you dtf?`,
+  `someone's horny for you :smirk:`,
+  `gonna fuck them?`
+];
+
+var fuckmessages = [
+  `<@${message.mentions.first().id}> pushes <@${message.author.id}> against a wall and fucks them hard.`,
+  `<@${message.mentions.first().id}> gets penetrated by <@${message.author.id}>.`,
+  `<@${message.author.id}> fucks <@${message.mentions.first().id}> to orgasm heaven.`,
+  `<@${message.mentions.first().id}>'s dick nearly tears <@${message.mentions.first().id}>'s tight ass.`
+];
+	  
+	  
+	  
+	  
 let image = (await irlnsfw.pgif());	  
 	  
 const confembed = new Discord.RichEmbed()
