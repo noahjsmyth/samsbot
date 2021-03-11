@@ -7,7 +7,7 @@ module.exports = {
 const randlength = Math.floor(Math.random() * 21);     
 function makeid(length) {
    var result           = '';
-   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var characters       = '=';
    var charactersLength = characters.length;
    for ( var i = 0; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -16,7 +16,7 @@ function makeid(length) {
 }
     
 	  if (!args[0]) {
-		  message.channel.send(':x: | You need to ping someone if you want to fuck them, silly!');
+		  message.channel.send(`pp size is ${makeid(randlength)} :flushed:`);
 		  
 	  }    
 
