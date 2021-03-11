@@ -1,4 +1,13 @@
 const Discord = require('discord.js');
+
+
+
+const confembed = new Discord.RichEmbed()
+	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?`})
+	.setColor(black)
+
+
+
 module.exports = {
   name: "fuck",
   category: "NSFW",
@@ -10,7 +19,7 @@ module.exports = {
 		  
 	  }
 	  else {
-	message.channel.send('Okay, whoever got pinged needs to say yes. Thanks!');
+	message.channel.send(confembed);
     const filter = m => m.content.includes('yes') && m.author.id === message.mentions.users.first().id;
 const collector = message.channel.createMessageCollector(filter, { time: 15000000 });
 
@@ -23,9 +32,7 @@ collector.on('collect', m => {
 	
 	
 	
-const confembed = new Discord.RichEmbed()
-	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?`})
-	.setColor(black)
+
 });
                     }
 	  }
