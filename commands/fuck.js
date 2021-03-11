@@ -17,6 +17,15 @@ const collector = message.channel.createMessageCollector(filter, { time: 1500000
 collector.on('collect', m => {
 	console.log(`Collected ${m.content}`);
   message.channel.send('it fucking worked! PogChamp');
+	
+	
+	
+	
+	
+	
+const confembed = new Discord.RichEmbed()
+	.setDescription(`@${message.mentions.users.first().tag}, do you wanna fuck @${message.author.tag}?`})
+	.setColor(black)
 });
                     }
 	  }
