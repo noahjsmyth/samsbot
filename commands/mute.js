@@ -11,7 +11,7 @@ module.exports = {
         .setFooter(`Check in the mute.js file if there is an error!`)
     if(!message.guild.me.hasPermission(["MANAGE_ROLES", "ADMINISTRATOR"])) return message.channel.send(noPermission)
    
-        let mutee = message.mentions.members.first() || message.guild.members.get(args[0])
+        let mutee = message.mentions.members.first()
         if(!mutee) return message.channel.send('You have to @ a user in this discord!')
         let reason = args.slice(1).join(" ");
         if(!reason) reason = "No reason given"
