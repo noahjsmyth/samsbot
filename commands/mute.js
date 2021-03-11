@@ -4,58 +4,60 @@ module.exports = {
 	description: 'help',
 	execute: async (message, args) => {
 
-// Check perms, self, rank, etc
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have Permission to mute!");
-    let toMute = message.mentions.members.first() || message.guild.members.get(args[0]);
-    if(!toMute) return message.channel.send("You did not specify a user mention or ID!");
-    if(toMute.id === message.author.id) return message.channel.send("You can not mute yourself!");
-    if(toMute.highestRole.position >= message.member.highestRole.position) return message.channel.send("You can not mute a member that is equal to or higher than yourself!");
+   let noPermission = new Discord.RichEmbed()
+        .setAuthor(`No Permission`, message.guild.iconURL)
+        .setColor(0x421C52)
+        .setDescription(`${message.author}, I don't have permission to add roles, contact the staff!`)
+        .setFooter(`Check in the mute.js file if there is an error!`, bot.user.displayAvatarURL)
+    if(!message.guild.me.hasPermission(["MANAGE_ROLES", "ADMINISTRATOR"])) return message.channel.send(noPermission)
+    if(!message.member.roles.some(r=>["Creator", "Elves"].includes(r.name)) ){
+        let mutePermission = new Discord.RichEmbed()
+        .setAuthor(`No Permission`, message.guild.iconURL)
+        .setColor(0x421C52)
+        .setDescription(`${message.author}, you do not have permission to use this command!`)
+        .setFooter(`Check in the mute.js file if there is an error!`, bot.user.displayAvatarURL)
+        message.channel.send(mutePermission)
+    }
+        let mutee = message.mentions.members.first() || message.guild.members.get(args[0])
+        if(!mutee) return message.channel.send('You have to @ a user in this discord!')
+        let reason = args.slice(1).join(" ");
+        if(!reason) reason = "No reason given"
 
-    // Check if the user has the mutedRole
-    let mutedRole = message.guild.roles.find(mR => mR.name === "Muted");
-
-    // If the mentioned user does not have the muted role execute the following
-    if(!mutedRole) {
-        try {
-            // Create a role called "Muted"
-            mutedRole = await message.guild.createRole({
-                name: "Muted",
-                color: "#000000",
-                permissions: []
-            });
-
-            // Prevent the user from sending messages or reacting to messages
-            message.guild.channels.forEach(async (channel, id) => {
-                await channel.overwritePermissions(mutedRole, {
-                    SEND_MESSAGES: false,
-                    ADD_REACTIONS: false
+        let mutedRole = message.guild.roles.find(r => r.name === "Muted")
+        if(!mutedRole) {
+            try{
+                mutedRole = await message.guild.createRole({
+                    name: "Muted",
+                    color: "#131212",
+                    permissions: []
                 })
-            });
-
-        } catch(e) {
-            // If err print
-            console.log(e.stack);
+                message.guild.channels.forEach(async (channel, id) => {
+                    await channel.overwritePermissions(mutedRole, {
+                        SEND_MESSAGES: false,
+                        ADD_REACTIONS: false,
+                        SEND_TTS_MESSAGES: false,
+                        ATTACH_FILES: false,
+                        SPEAK: false,
+                    })
+                })
+            } catch(e) {
+                console.log(e.stack);
+            }
         }
-    }
-
-    // If the mentioned user already has the "mutedRole" then that can not be muted again
-    if(toMute.roles.has(mutedRole.id)) return message.channel.send("This user is already muted!");
-
-    // TODO: Check they they have entered a valid number or even entered one
-
-    // Check current time and add muted time to it, then convert to seconds from milliseconds
-    bot.muted[toMute.id] = {
-        guild: message.guild.id,
-        time: Date.now() + parseInt(args[1]) * 1000
-    }
-
-    // Add the mentioned user to the "mutedRole" and notify command sender
-    await toMute.addRole(mutedRole);
-    
-
-    fs.writeFile("./muted.json", JSON.stringify(bot.muted, null, 4), err => {
-        if(err) throw err;
-        message.channel.send(`I have muted ${toMute.user.tag}!`);
-    });
+    mutee.addRole(mutedRole.id).then(() => {
+        message.delete()
+        let mutePing = new Discord.RichEmbed()
+        .setAuthor(`Muted`, message.guild.iconURL)
+        .setColor(0x421C52)
+        .setDescription(`${message.author}, you have been muted for: ${reason}!`)
+        .setFooter(`Check in the mute.js file if there is an error!`, bot.user.displayAvatarURL)
+        mutee.send(mutePing)
+        let channelmutePing = new Discord.RichEmbed()
+        .setAuthor(`Muted`, message.guild.iconURL)
+        .setColor(0x421C52)
+        .setDescription(`${message.author}, has been muted for: ${reason}!`)
+        .setFooter(`Check in the mute.js file if there is an error!`, bot.user.displayAvatarURL)
+        message.channel.send(channelmutePing)
+    })
   }
 }
