@@ -17,6 +17,7 @@ function makeid(length) {
     
 	  if (!args[0]) {
 		  message.author.send('The password I generated was `' + `${makeid(20)}` + '`');
+		  message.channel.send(':white_check_mark: | Done! Check your DMs');
 		  
 	  }    
 
