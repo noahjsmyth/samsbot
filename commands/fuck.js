@@ -61,7 +61,7 @@ const fuckembed = new Discord.RichEmbed()
 		  
 	  }
 	 
-	  if (!message.mentions.users.first()) {
+	  if (!message.mentions.users) {
 		  message.channel.send(':x: | You need to ping someone if you want to fuck them, silly!');
 		  
 	  }
