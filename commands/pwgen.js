@@ -20,6 +20,6 @@ function makeid(length) {
 		  
 	  }    
 
-console.log(makeid(randlength));
+console.log(makeid(20));
   }
 }
