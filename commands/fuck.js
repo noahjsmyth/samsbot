@@ -93,6 +93,7 @@ yescollector.on('collect', m => {
 	return message.reply("Maybe try this command in an NSFW channel next time, dummy.")
                     }
 	  }
+}
 
  
                   
