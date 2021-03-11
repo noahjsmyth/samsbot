@@ -4,7 +4,7 @@ module.exports = {
   description: "Sends random hentai",
   usage: "[command]",
   execute: async (message, args) => {
-const randlength = Math.floor(Math.random() * 21);     
+const randlength = Math.floor(Math.random() * 13);     
 function makeid(length) {
    var result           = '';
    var characters       = '=';
