@@ -6,7 +6,7 @@ module.exports = {
   usage: "[command]",
   execute: async (message, args) => {  
 
-    const filter = m => m.content.includes('yes') && m.author.id === message.mentions.first().id;
+    const filter = m => m.content.includes('yes') && m.author.id === message.mentions.users.first().id;
 const collector = message.channel.createMessageCollector(filter, { time: 15000 });
 
 collector.on('collect', m => {
