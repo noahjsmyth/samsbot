@@ -10,14 +10,7 @@ module.exports = {
         .setDescription(`${message.author}, I don't have permission to add roles, contact the staff!`)
         .setFooter(`Check in the mute.js file if there is an error!`)
     if(!message.guild.me.hasPermission(["MANAGE_ROLES", "ADMINISTRATOR"])) return message.channel.send(noPermission)
-    if(!message.member.roles.some(r=>["Creator", "Elves"].includes(r.name)) ){
-        let mutePermission = new Discord.RichEmbed()
-        .setAuthor(`No Permission`, message.guild.iconURL)
-        .setColor(0x421C52)
-        .setDescription(`${message.author}, you do not have permission to use this command!`)
-        .setFooter(`Check in the mute.js file if there is an error!`)
-        message.channel.send(mutePermission)
-    }
+   
         let mutee = message.mentions.members.first() || message.guild.members.get(args[0])
         if(!mutee) return message.channel.send('You have to @ a user in this discord!')
         let reason = args.slice(1).join(" ");
