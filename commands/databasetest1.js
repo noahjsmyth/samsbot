@@ -10,26 +10,24 @@ module.exports = {
   execute: async (message, args) => {
   
 // Setting an object in the database:
-db.set(${message.author.id}, { difficulty: 'Easy' })
+db.set(`${message.author.id}`, { difficulty: 'Easy' })
 // -> { difficulty: 'Easy' }
  
 // Pushing an element to an array (that doesn't exist yet) in an object:
-db.push('userInfo.items', 'Sword')
+db.push(`${message.author.id}.items`, 'Sword')
 // -> { difficulty: 'Easy', items: ['Sword'] }
  
 // Adding to a number (that doesn't exist yet) in an object:
-db.add('userInfo.balance', 500)
+db.add(`${message.author.id}.balance`, 500)
 // -> { difficulty: 'Easy', items: ['Sword'], balance: 500 }
  
 // Repeating previous examples:
-db.push('userInfo.items', 'This is a new item.')
+db.push(`${message.author.id}.items`, 'This is a new item.')
 // -> { difficulty: 'Easy', items: ['Sword', 'Watch'], balance: 500 }
-db.add('userInfo.balance', 500)
+db.add(`${message.author.id}.balance`, 500)
 // -> { difficulty: 'Easy', items: ['Sword', 'Watch'], balance: 1000 }
  
 // Fetching individual properties
-db.get('userInfo.balance') // -> 1000
-db.get('userInfo.items') // ['Sword', 'Watch']
 var items = db.get(`${message.author.id}.items`);
 message.channel.send(items);
 }
