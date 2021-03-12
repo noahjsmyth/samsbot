@@ -11,17 +11,15 @@ module.exports = {
     let owo = (await neko.sfw.kiss());
     if (!message.mentions.users.first()) {
         const hug1 = new Discord.RichEmbed()
-        .setTitle(`<@${message.author.id}> kisses themselves`)
+        .setDescription(`<@${message.author.id}> kisses themselves`)
         .setImage(owo.url)
         .setColor(`#FF0000`)
-        .setURL(owo.url);
         message.channel.send(hug1);
     } else {
         const hug2 = new Discord.RichEmbed()
-        .setTitle(`<@${message.author.id}> kisses <@${message.mentions.users.first().id}>`)
+        .setDescription(`<@${message.author.id}> kisses <@${message.mentions.users.first().id}>`)
         .setImage(owo.url)
         .setColor(`#FF0000`)
-        .setURL(owo.url);
         message.channel.send(hug2);
   }
         }
