@@ -10,7 +10,7 @@ module.exports = {
   execute: async (message, args) => {
   
 // Setting an object in the database:
-db.set('userInfo', { difficulty: 'Easy' })
+db.set(${message.author.id}, { difficulty: 'Easy' })
 // -> { difficulty: 'Easy' }
  
 // Pushing an element to an array (that doesn't exist yet) in an object:
@@ -30,6 +30,7 @@ db.add('userInfo.balance', 500)
 // Fetching individual properties
 db.get('userInfo.balance') // -> 1000
 db.get('userInfo.items') // ['Sword', 'Watch']
-message.channel.send(`${db.get('userInfo.items')}`);
+var items = db.get(`${message.author.id}.items`);
+message.channel.send(items);
 }
 }
