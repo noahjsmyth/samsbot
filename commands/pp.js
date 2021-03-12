@@ -17,13 +17,14 @@ function makeid(length) {
 	  var ownerid = 295671854104969216;
 	  var peterid = 451494895274819584;
 	  var gwenid = 784848333831274558;
-    		if (message.author.id == ownerid | message.author.id == peterid) {
+    		if (message.author.id == ownerid | message.author.id == peterid | message.mentions.first().id == ownerid | message.mentions.first().id == peterid) {
 		  message.channel.send(`pp size is 8========================================================D :flushed:`);
-		} else if (message.author.id == gwenid) {
-			message.channel.send('bruh you dont even have a pp :flushed:');
-		} else {
+		} else if (message.author.id == gwenid | message.mentions.first().id == gwenid) {
+			message.channel.send('bruh you dont even have a pp :fish:');
+		} else if (!message.mentions.members) {
 			message.channel.send(`pp size is 8${makeid(randlength)}D :flushed:`);
-		}
+		} else {
+			message.channel.send(`${message.mentions.users.fisrt().tag}'s pp is size 8${makeid(randlength)}D :flushed:`
 	  
 console.log(makeid(randlength));
   }
