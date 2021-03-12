@@ -24,7 +24,8 @@ function makeid(length) {
 		} else if (!message.mentions.members) {
 			message.channel.send(`pp size is 8${makeid(randlength)}D :flushed:`);
 		} else {
-			message.channel.send(`${message.mentions.users.fisrt().tag}'s pp is size 8${makeid(randlength)}D :flushed:`
+			message.channel.send(`${message.mentions.users.fisrt().tag}'s pp is size 8${makeid(randlength)}D :flushed:`)
+		}
 	  
 console.log(makeid(randlength));
   }
