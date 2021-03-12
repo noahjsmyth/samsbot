@@ -24,12 +24,14 @@ function makeid(length) {
 			message.channel.send('bruh you doesnt even have a pp :fish:');
 	 	} else if (message.author.id == walterid) {
 			message.channel.send('sorry dude it got removed a few years ago :dog:');
-		} else if (!message.mentions.users) {
+		} else if (!message.mentions.users.first()) {
 			return message.channel.send(`${message.author.tag}'s pp size is 8${makeid(randlength)}D :flushed:`)
 		} else if (message.mentions.users.first().id == ownerid | message.mentions.users.first().id == peterid) {
 			message.channel.send(`${message.mentions.users.first().tag}'s pp size is 8========================================================D :flushed:`);
 		} else if (message.mentions.users.first().id == gwenid) {
 			message.channel.send('bruh gwen doesnt even have a pp :fish:');	
+		} else if (message.mentions.users.first().id == walterid) {
+			message.channel.send('sorry dude it got removed a few years ago :dog:');
 		} else {
 			message.channel.send(`${message.mentions.users.fisrt().tag}'s pp is size 8${makeid(randlength)}D :flushed:`)
 		}
