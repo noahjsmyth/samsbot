@@ -22,7 +22,7 @@ function makeid(length) {
 		} else if (message.author.id == gwenid) {
 			message.channel.send('bruh you doesnt even have a pp :fish:');
 		} else if (!message.mentions.members.first()) {
-			message.channel.send(`${message.author.tag}'s pp size is 8${makeid(randlength)}D :flushed:`)
+			return message.channel.send(`${message.author.tag}'s pp size is 8${makeid(randlength)}D :flushed:`)
 		} else if (message.mentions.users.first().id == ownerid | message.mentions.users.first().id == peterid) {
 			message.channel.send(`${message.mentions.users.fisrt().tag}'s pp size is 8========================================================D :flushed:`);
 		} else if (message.mentions.users.first().id == gwenid) {
