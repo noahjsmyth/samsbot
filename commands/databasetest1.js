@@ -1,4 +1,4 @@
-const db = require('quick.db');
+global.db = require('quick.db');
 const Discord = require('discord.js');
 
 
@@ -22,7 +22,7 @@ db.add('userInfo.balance', 500)
 // -> { difficulty: 'Easy', items: ['Sword'], balance: 500 }
  
 // Repeating previous examples:
-db.push('userInfo.items', 'Watch')
+db.push('userInfo.items', 'This is a new item.')
 // -> { difficulty: 'Easy', items: ['Sword', 'Watch'], balance: 500 }
 db.add('userInfo.balance', 500)
 // -> { difficulty: 'Easy', items: ['Sword', 'Watch'], balance: 1000 }
