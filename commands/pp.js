@@ -19,7 +19,7 @@ function makeid(length) {
 	  var gwenid = 784848333831274558;
     		if (message.author.id == ownerid | message.author.id == peterid) {
 		  message.channel.send(`pp size is 8========================================================D :flushed:`);
-		} else if (message.author.id == gwenid | ) {
+		} else if (message.author.id == gwenid) {
 			message.channel.send('bruh you doesnt even have a pp :fish:');
 		} else if (!message.mentions.members) {
 			message.channel.send(`${message.author.tag}'s pp size is 8${makeid(randlength)}D :flushed:`)
