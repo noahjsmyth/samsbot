@@ -28,7 +28,7 @@ db.add(`${message.author.id}.balance`, 500)
 // -> { difficulty: 'Easy', items: ['Sword', 'Watch'], balance: 1000 }
  
 // Fetching individual properties
-var items = db.get(`${message.author.id}.items`);
+var items = db.get(`${message.author.id}.balance`);
 message.channel.send(items);
 }
 }
