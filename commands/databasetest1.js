@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 
 module.exports = {
-  name: "pp",
+  name: "dbtest1",
   category: "NSFW",
   description: "Sends random hentai",
   usage: "[command]",
