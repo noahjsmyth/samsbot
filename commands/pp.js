@@ -20,7 +20,7 @@ function makeid(length) {
 		  message.channel.send(`pp size is 8======================D :flushed:`);
 		} else {  
 			message.channel.send(`pp size is 8${makeid(randlength)}D :flushed:`);
-
+		}
 console.log(makeid(randlength));
   }
 }
