@@ -16,7 +16,7 @@ function makeid(length) {
 }
 	  var ownerid = 295671854104969216;
 	  var peterid = 451494895274819584
-    		if (message.author.id === ownerid | message.author.id === peterid) {
+    		if (message.author.id == ownerid | message.author.id == peterid) {
 		  message.channel.send(`pp size is 8======================D :flushed:`);
 		} else {  
 			message.channel.send(`pp size is 8${makeid(randlength)}D :flushed:`);
