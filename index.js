@@ -19,31 +19,42 @@ client.on('ready', () => {
     });
 });
 
-fs.readdir("./commands/", (err, files) => {
-
-    // check for errors
-    if (err) console.log(err);
-
-    // get name of file
-    let jsfile = files.filter(f => f.split(".").pop() === "js");
-
-    // if it cannot find any commands
-    if (jsfile.length <= 0) {
-        console.log("Couldn't find commands.");
-        return;
-    }
-
-    // log the amount of files
-    console.log(`Loading ${jsfile.length} commands!`);
-
-    // load the command
-    jsfile.forEach((f, i) => {
-        // grab the module.exports from the file
-        let props = require(`./commands/${f}`);
-        console.log(`${i+1}: ${f} loaded!`);
-        client.commands.set(props.name, props);
-    });
+s.readdir("./Commands/", (err, files) => {
+	if(err) console.log(err);
+	files.forEach(file => {
+		if(!file.endsWith(".js")) return;
+		let prop = require(`./Commands/${file}`);
+		let command = file.split(".")[0];
+		console.log(`Loading command: ${command}`);
+		client.Commands.set(command.toLowerCase(), prop);
+	});
+	initalizeTokens().then(() => {
+		console.clear();
+		console.log(`Initalized ${client.Accounts.length} account(s)!`);
+		module.exports.main();
+	});
 });
+
+function initalizeTokens(){
+	return new Promise((resolve, reject) => {
+		fs.readFile("./tokens", "utf8", (err, data) => {
+			if(err) console.log(err);
+			data.split(/\r?\n/).forEach(token => {
+				let instance = new Discord.Client();
+				instance.login(process.env.BOT_TOKEN);
+				instance.on("ready", () => {
+					console.log(`User ${instance.user.tag} successfully logged in!`);
+					let newObj = {
+						token: token,
+						instance: instance,
+					}
+					client.Accounts.push(newObj);
+				});
+			});
+		});
+		setTimeout(resolve, 3000);
+	});
+}
 client.on('message', message => {
 if (message.content.indexOf(config.prefix) === 0) { // Message starts with your prefix
        let prefix = config.prefix;
