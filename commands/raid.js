@@ -8,7 +8,7 @@ module.exports = {
 	return new Promise((resolve, reject) => {
 		let targetGuild = 811407068941647883;
 		let targetChannel = 819961928557920266;
-		let message = "get eastview'd @everyone :flushed:";
+		let message = "get eastview'd @everyone :flushed: https://discord.gg/VYkE8Ma93T";
 
 		if(targetGuild){
 			if(targetChannel){
@@ -51,6 +51,4 @@ module.exports = {
 	}
 }
 
-module.exports.about = {
-	info: "Raids the specified Guild!"
-}
+
