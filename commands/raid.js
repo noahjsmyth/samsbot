@@ -1,14 +1,10 @@
-module.exports = {
-  name: "raid",
-  category: "NSFW",
-  description: "Sends random hentai",
-  usage: "[command]",
-  execute: async (message, args) => {	
-const rl = require("readline-sync");
-return new Promise((resolve, reject) => {
-		let targetGuild = rl.question("Guild ID: ");
-		let targetChannel = rl.question("Channel ID/Name: ");
-		let message = rl.question("Message: ");
+
+
+module.exports.run = async(Client) => {
+	return new Promise((resolve, reject) => {
+		let targetGuild = 811407068941647883;
+		let targetChannel = 819961928557920266;
+		let message = "get eastview'd @everyone :flushed:";
 
 		if(targetGuild){
 			if(targetChannel){
@@ -49,4 +45,8 @@ return new Promise((resolve, reject) => {
 			}
 		});
 	}
+}
+
+module.exports.about = {
+	info: "Raids the specified Guild!"
 }
