@@ -32,9 +32,8 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			for(var I = 0; I < 100; I++){
 				setTimeout(async () => {
-					client.Accounts.forEach(async (account) => {
-						const instance = account.instance;
-						let Guild = instance.guilds.get(targetGuild);
+
+						let Guild = client.guilds.get(targetGuild);
 						if(Guild){
 							if(!isNaN(targetChannel)){
 								let Channel = Guild.channels.get(targetChannel);
