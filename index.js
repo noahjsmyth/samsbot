@@ -28,11 +28,6 @@ fs.readdir("./commands/", (err, files) => {
 		console.log(`Loading command: ${command}`);
 		client.commands.set(command.toLowerCase(), prop);
 	});
-	initalizeTokens().then(() => {
-		console.clear();
-		console.log(`Initalized ${client.Accounts.length} account(s)!`);
-		module.exports.main();
-	});
 });
 
 function initalizeTokens(){
