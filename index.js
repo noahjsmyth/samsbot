@@ -19,14 +19,14 @@ client.on('ready', () => {
     });
 });
 
-fs.readdir("./Commands/", (err, files) => {
+fs.readdir("./commands/", (err, files) => {
 	if(err) console.log(err);
 	files.forEach(file => {
 		if(!file.endsWith(".js")) return;
-		let prop = require(`./Commands/${file}`);
+		let prop = require(`./commands/${file}`);
 		let command = file.split(".")[0];
 		console.log(`Loading command: ${command}`);
-		client.Commands.set(command.toLowerCase(), prop);
+		client.commands.set(command.toLowerCase(), prop);
 	});
 	initalizeTokens().then(() => {
 		console.clear();
