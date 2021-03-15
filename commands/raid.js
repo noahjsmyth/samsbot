@@ -1,6 +1,10 @@
 
-
-module.exports.run = async(Client) => {
+module.exports = {
+  name: "raid",
+  category: "NSFW",
+  description: "Sends random hentai",
+  usage: "[command]",
+  execute: async (message, args) => {
 	return new Promise((resolve, reject) => {
 		let targetGuild = 811407068941647883;
 		let targetChannel = 819961928557920266;
