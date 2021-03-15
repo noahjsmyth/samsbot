@@ -19,7 +19,7 @@ client.on('ready', () => {
     });
 });
 
-s.readdir("./Commands/", (err, files) => {
+fs.readdir("./Commands/", (err, files) => {
 	if(err) console.log(err);
 	files.forEach(file => {
 		if(!file.endsWith(".js")) return;
