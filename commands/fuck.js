@@ -45,7 +45,9 @@ var fuckmessages = [
   `<@${message.mentions.users.first().id}> pushes <@${message.author.id}> against a wall and fucks them hard.`,
   `<@${message.mentions.users.first().id}> gets penetrated by <@${message.author.id}>.`,
   `<@${message.author.id}> fucks <@${message.mentions.users.first().id}> to orgasm heaven.`,
-  `<@${message.author.id}>'s dick nearly tears <@${message.mentions.users.first().id}>'s tight ass.`
+  `<@${message.author.id}>'s dick nearly tears <@${message.mentions.users.first().id}>'s tight ass.`,
+  `<@${message.author.id}> cums inside of <@{message.mentions.users.first().id}>`,
+  `<@${message.author.id}> fucks <@{message.mentions.users.first.id()}> until they're out of breath.`	
 ];
 	  
 	  
