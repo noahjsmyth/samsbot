@@ -68,7 +68,7 @@ const fuckembed = new Discord.RichEmbed()
 
 	
 		  
-if (message.channel.nsfw)  {	
+
 	message.channel.send(confembed);
 const yesfilter = m => m.content.includes('yes') && m.author.id === message.mentions.users.first().id;
 const yescollector = message.channel.createMessageCollector(yesfilter, { time: 15000000 });
@@ -89,10 +89,7 @@ yescollector.on('collect', m => {
 	nocollector.stop();	
 	yescollector.stop();
 });
-} else {
-	 message.react('💢');
-	return message.reply("Maybe try this command in an NSFW channel next time, dummy.")
-                    }
+}
 	  }
 }
 
