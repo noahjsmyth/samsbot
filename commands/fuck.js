@@ -59,7 +59,7 @@ const confembed = new Discord.RichEmbed()
 
 const fuckembed = new Discord.RichEmbed()
 	.setDescription(fuckmessages[Math.floor(Math.random() * fuckmessages.length)])
-	.setImage(image)
+
 	.setColor('#000000')	
 	  
 	  
